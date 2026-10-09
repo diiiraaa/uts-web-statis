@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In | Music, Memory, Forever</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="auth">
+
+    <!-- Kolom kiri: artwork branding -->
+    <section class="auth__art" aria-labelledby="tagline">
+      <p class="auth__tagline" id="tagline">Music, Memory, Forever</p>
+    </section>
+
+    <!-- Kolom kanan: formulir login -->
+    <section class="auth__panel" aria-labelledby="form-title">
+
+      <div class="auth__box">
+        <a class="auth__brand" href="index.html" aria-label="Back to home page">
+          <img class="auth__logo" src="img/logo.jpg" alt="Brand logo" width="72" height="72">
+        </a>
+        <h1 class="auth__title" id="form-title">Welcome back</h1>
+
+        <button type="button" class="btn btn--google">
+          <svg class="btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/>
+            <path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.1-4 1.1-3.1 0-5.7-2.1-6.6-4.9H1.4v3.1A12 12 0 0 0 12 24z"/>
+            <path fill="#FBBC05" d="M5.4 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.4a12 12 0 0 0 0 10.800l4-3.100z"/>
+            <path fill="#EA4335" d="M12 4.800c1.800 0 3.300.6 4.600 1.800l3.400-3.400A12 12 0 0 0 1.400 6.600l4 3.100C6.300 6.900 8.900 4.800 12 4.800z"/>
+          </svg>
+          Sign in with Google
+        </button>
+
+        <p class="divider" role="separator" aria-label="or sign in with email"><span>or</span></p>
+
+        <form class="form" action="#" method="post">
+          <div class="field">
+            <label class="field__label" for="email">Username or email</label>
+            <input class="field__input" type="text" id="email" name="email" autocomplete="username" required>
+          </div>
+
+          <div class="field">
+            <div class="field__row">
+              <label class="field__label" for="password">Password</label>
+              <a class="link" href="#">Forgot Password?</a>
+            </div>
+            <div class="field__wrap">
+              <input class="field__input field__input--icon" type="password" id="password" name="password" autocomplete="current-password" required>
+              <button type="button" class="field__toggle" aria-label="Show password" aria-controls="password" aria-pressed="false">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="check">
+            <input class="check__input" type="checkbox" id="remember" name="remember">
+            <label class="check__label" for="remember">Remember Me</label>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Sign In</button>
+        </form>
+
+        <p class="auth__signup">Don't have an account? <a class="link" href="#">Sign up</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Tombol tampilkan / sembunyikan password
+    var toggle = document.querySelector('.field__toggle');
+    var pass = document.getElementById('password');
+    toggle.addEventListener('click', function () {
+      var show = pass.type === 'password';
+      pass.type = show ? 'text' : 'password';
+      toggle.setAttribute('aria-pressed', show);
+      toggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    });
+  </script>
+</body>
+</html>
